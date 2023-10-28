@@ -1,4 +1,3 @@
-
 # PCSO Hub
 ![Sample image](images/cover.jpg)
 
