@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,7 +50,8 @@ private fun StatelessScreen(modifier: Modifier = Modifier, scrollState: ScrollSt
         Text(
             text = "${
                 UiText.StringResource(R.string.app_name).asString()
-            }(${BuildConfig.VERSION_NAME})"
+            }(${BuildConfig.VERSION_NAME})",
+            style = MaterialTheme.typography.bodyLarge
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -63,7 +65,7 @@ private fun StatelessScreen(modifier: Modifier = Modifier, scrollState: ScrollSt
 
 @Preview
 @Composable
-fun ScreenPreview() {
+private fun ScreenPreview() {
     PCSOHubTheme {
         Surface {
             StatelessScreen(scrollState = rememberScrollState())
