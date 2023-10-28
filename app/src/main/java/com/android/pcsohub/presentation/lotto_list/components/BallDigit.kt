@@ -15,6 +15,8 @@ import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import com.android.pcsohub.R
+import com.android.pcsohub.common.UiText
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -56,7 +58,9 @@ fun BallDigit(
         }
     } else {
         Text(
-            text = "Invalid", color = MaterialTheme.colorScheme.error, style = digitStyle
+            text = UiText.StringResource(R.string.invalid).asString(),
+            color = MaterialTheme.colorScheme.error,
+            style = digitStyle
         )
     }
 }

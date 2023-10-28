@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.android.pcsohub.domain.model.Lotto
-import com.android.pcsohub.ui.theme.PCSOBallAPITheme
+import com.android.pcsohub.ui.theme.PCSOHubTheme
 
 @Composable
 fun LottoListItem(
@@ -69,7 +69,7 @@ fun LottoListItem(
 @Preview
 @Composable
 fun Preview() {
-    PCSOBallAPITheme {
+    PCSOHubTheme {
         Surface(
             color = MaterialTheme.colorScheme.background
         ) {

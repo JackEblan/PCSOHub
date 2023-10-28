@@ -38,7 +38,7 @@ import com.android.pcsohub.presentation.components.FloatingActionButtonHideOnScr
 import com.android.pcsohub.presentation.lotto_list.components.CategoryHeader
 import com.android.pcsohub.presentation.lotto_list.components.LottoDatePicker
 import com.android.pcsohub.presentation.lotto_list.components.LottoListItem
-import com.android.pcsohub.ui.theme.PCSOBallAPITheme
+import com.android.pcsohub.ui.theme.PCSOHubTheme
 import java.time.LocalDate
 import java.util.Calendar
 import java.util.TimeZone
@@ -158,7 +158,7 @@ private fun StatelessScreen(
 @Preview
 @Composable
 private fun ScreenPreview() {
-    PCSOBallAPITheme {
+    PCSOHubTheme {
         Surface {
             StatelessScreen(state = LottoListState(isLoading = false,
                                                    categories = List(20) { outerIndex ->

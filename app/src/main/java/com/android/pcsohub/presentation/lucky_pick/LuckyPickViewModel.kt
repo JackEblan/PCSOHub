@@ -2,6 +2,8 @@ package com.android.pcsohub.presentation.lucky_pick
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.android.pcsohub.R
+import com.android.pcsohub.common.UiText
 import com.android.pcsohub.data.local.LuckyPickEntity
 import com.android.pcsohub.domain.repository.LuckyPickRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -145,7 +147,11 @@ class LuckyPickViewModel @Inject constructor(private val repository: LuckyPickRe
                         )
                     )
 
-                    _uiEvent.emit(UIEvent.ShowSnackbar(message = "Successfully saved"))
+                    _uiEvent.emit(
+                        UIEvent.ShowSnackbar(
+                            message = UiText.StringResource(R.string.successfully_saved)
+                        )
+                    )
                 }
             }
 
@@ -172,6 +178,6 @@ class LuckyPickViewModel @Inject constructor(private val repository: LuckyPickRe
     }
 
     sealed class UIEvent {
-        data class ShowSnackbar(val message: String? = null) : UIEvent()
+        data class ShowSnackbar(val message: UiText? = null) : UIEvent()
     }
 }

@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">PCSO Hub</string>
+    <string name="app_name" translatable="false">PCSO Hub</string>
+    <string name="about_desc">PCSO Hub is an independent app and is not affiliated with or endorsed by the official Philippines Charity Sweepstakes Office (PCSO). This app serves as an informational platform for lottery results and is not a substitute for official PCSO services. While every effort is made to provide accurate information, users are advised to independently verify the data. The app developers hold no responsibility for discrepancies or errors. Please be aware that PCSO Hub is an independent service and not the official PCSO.</string>
+    <string name="invalid">Invalid</string>
+    <string name="search">Search</string>
+    <string name="reset">Reset</string>
+    <string name="successfully_saved">Successfully saved</string>
 </resources>

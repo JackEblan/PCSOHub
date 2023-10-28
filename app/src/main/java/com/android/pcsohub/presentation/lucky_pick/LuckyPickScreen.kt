@@ -27,7 +27,7 @@ import com.android.pcsohub.common.LottoAssetIcons
 import com.android.pcsohub.common.LottoTitles
 import com.android.pcsohub.presentation.components.FloatingActionButtonHideOnScroll
 import com.android.pcsohub.presentation.lucky_pick.components.LuckyPickListItem
-import com.android.pcsohub.ui.theme.PCSOBallAPITheme
+import com.android.pcsohub.ui.theme.PCSOHubTheme
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
@@ -49,7 +49,7 @@ fun LuckyPickScreen(
             when (event) {
                 is LuckyPickViewModel.UIEvent.ShowSnackbar -> {
                     event.message?.let {
-                        Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, it.asString(context), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -214,7 +214,7 @@ private fun StatelessScreen(
 @Preview
 @Composable
 private fun ScreenPreview() {
-    PCSOBallAPITheme {
+    PCSOHubTheme {
         Surface {
             StatelessScreen(visibilityState = false,
                             state = LuckPickState(),

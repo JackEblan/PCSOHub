@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_desc">Ang PCSO Hub ay isang independenteng app at hindi konektado o suportado ng opisyal na Philippines Charity Sweepstakes Office (PCSO). Ang app na ito ay naglilingkod bilang isang impormasyonal na plataporma para sa mga resulta ng loterya at hindi kapalit ng opisyal na mga serbisyo ng PCSO. Bagaman ginagawa ang bawat pagsisikap upang magbigay ng tumpak na impormasyon, pinapayuhan ang mga gumagamit na i-verify nang independiyente ang mga datos. Ang mga tagapag-develop ng app ay walang pananagutan sa anumang pagkakaiba o mga error. Paki tandaan na ang PCSO Hub ay isang independenteng serbisyo at hindi opisyal na PCSO.</string>
+    <string name="invalid">Hindi wasto</string>
+    <string name="search">Maghanap</string>
+    <string name="reset">I-reset</string>
+    <string name="successfully_saved">Matagumpay na na-save</string>
+</resources>

@@ -35,7 +35,7 @@ class LottoRepositoryImpl @Inject constructor(
 
                 emit(Resource.Success(data = newCacheLotto))
             } catch (e: Exception) {
-                emit(Resource.Error(message = e.localizedMessage ?: "An error occurred"))
+                emit(Resource.Error(message = e.localizedMessage!!))
             }
         }
     }

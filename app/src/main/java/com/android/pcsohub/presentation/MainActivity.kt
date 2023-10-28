@@ -32,7 +32,7 @@ import com.android.pcsohub.common.all_screens
 import com.android.pcsohub.presentation.about.AboutScreen
 import com.android.pcsohub.presentation.lotto_list.LottoListScreen
 import com.android.pcsohub.presentation.lucky_pick.LuckyPickScreen
-import com.android.pcsohub.ui.theme.PCSOBallAPITheme
+import com.android.pcsohub.ui.theme.PCSOHubTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            PCSOBallAPITheme {
+            PCSOHubTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
