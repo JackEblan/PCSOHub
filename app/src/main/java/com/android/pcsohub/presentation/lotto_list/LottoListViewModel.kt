@@ -51,7 +51,7 @@ class LottoListViewModel @Inject constructor(
             }
 
             is LottoListEvent.GetLottoResults -> viewModelScope.launch {
-                repository.getLotto().collectLatest(::onResult)
+                repository.getLotto().collect(::onResult)
             }
         }
     }

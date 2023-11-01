@@ -21,6 +21,8 @@ class LottoRepositoryImpl @Inject constructor(
 
     override suspend fun getLotto(): Flow<Resource<List<GroupedLotto>>> {
         return flow {
+            emit(Resource.Loading())
+
             val cacheLotto = lottoDb.lottoDao.getLotto().toGroupedLottoList(defaultDispatcher)
 
             emit(Resource.Loading(data = cacheLotto))
@@ -44,6 +46,8 @@ class LottoRepositoryImpl @Inject constructor(
         dateFromApi: String, dateFromLocal: String
     ): Flow<Resource<List<GroupedLotto>>> {
         return flow {
+            emit(Resource.Loading())
+
             val cacheLotto =
                 lottoDb.lottoDao.getLottoByDate(dateFromLocal).toGroupedLottoList(defaultDispatcher)
 
@@ -61,7 +65,7 @@ class LottoRepositoryImpl @Inject constructor(
 
                 emit(Resource.Success(data = newCacheLotto))
             } catch (e: Exception) {
-                emit(Resource.Error(message = e.localizedMessage ?: "An error occurred"))
+                emit(Resource.Error(message = e.localizedMessage!!))
             }
         }
     }

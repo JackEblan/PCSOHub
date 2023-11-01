@@ -60,21 +60,20 @@ suspend fun List<LottoEntity>.toGroupedLottoList(defaultDispatcher: CoroutineDis
     }
 
     val lotto = withContext(defaultDispatcher) {
-        map { entity ->
-            Lotto(
-                contentBadge = entity.contentBadge,
-                contentBody = entity.contentBody,
-                contentPhoto = entity.contentPhoto,
-                contentSubtitle1 = entity.contentSubtitle1,
-                contentSubtitle2 = entity.contentSubtitle2,
-                contentTitle = entity.contentTitle
-            )
-        }.sortedWith(compareBy { titles_arrangement.indexOf(it.contentTitle) })
-    }
+        asSequence().map { entity ->
+                Lotto(
+                    contentBadge = entity.contentBadge,
+                    contentBody = entity.contentBody,
+                    contentPhoto = entity.contentPhoto,
+                    contentSubtitle1 = entity.contentSubtitle1,
+                    contentSubtitle2 = entity.contentSubtitle2,
+                    contentTitle = entity.contentTitle
+                )
+            }.sortedWith(compareBy { titles_arrangement.indexOf(it.contentTitle) })
 
-    return withContext(defaultDispatcher) {
-        lotto.groupBy { it.contentSubtitle1 }.map {
-            GroupedLotto(date = it.key, lotto = it.value)
-        }.sortedWith(sortDateByAsc)
+            .groupBy { it.contentSubtitle1 }.map {
+                GroupedLotto(date = it.key, lotto = it.value)
+            }.sortedWith(sortDateByAsc).toList()
     }
+    return lotto
 }
